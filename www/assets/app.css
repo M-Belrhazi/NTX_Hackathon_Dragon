@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "NL";
+  src: url("fonts/THENIGHTLAMP.woff") format('woff'),
+      url("fonts/THENIGHTLAMP.ttf") format('Truetype'),
+      url("fonts/THENIGHTLAMP.otf") format('Opentype');
+}
+
+:root {
+  --circle-color: #cccccc;
+  --circle-width: 50%;
+  --circle-height: 50%;
+  --circle-opacity: 50%;
+  --size-transition: 0.5s;
+  --color-transition: 0.5s;
+}
+
+#play {
+  background-color: red;
+}
+
+html,
+body,
+#container {
+  height: 100%;
+  padding: 0;
+}
+
+#div_video {
+  position: relative;
+}
+
+#video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+h1.title {
+  position: fixed;
+  top: 5%;
+}
+
+#play {
+  position: fixed;
+  font-size: 1.5rem;
+  top: 46%;
+  left: 48%;
+  opacity: 0;
+  width: 7rem;
+  height: 7rem;
+  transition: opacity .3s ease;
+  cursor: pointer;
+  border: none;
+
+    /* Additional styles just to increase visual appeal */
+    border-radius: 10%;
+    background: red;
+    color: white;
+    font-weight: bold;
+    /* line-height: 25px; */
+    text-align: center;
+    /* End */
+}
+
+#bpm-div {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  width: 70px;
+  height: 70px;
+  border: none;
+
+    /* Additional styles just to increase visual appeal */
+    border-radius: 50%;
+    background: var(--circle-color);
+    color: black;
+    font-weight: bold;
+    /* line-height: 25px; */
+    text-align: center;
+    /* End */
+}
+
+/* On hovering the video, show the button */
+video:hover~#play {
+  opacity: 1;
+}
+
+#play:hover {
+  opacity: 1;
+}
+
+#circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500pt; /* todo: unhardcode this height */
+}
+
+#circle {
+  background-color: var(--circle-color);
+  opacity: var(--circle-opacity);
+  width: var(--circle-width);
+  height: var(--circle-height);
+  border-radius: 50%;
+  transition: height var(--size-transition) ease,
+    width var(--size-transition) ease, color var(--color-transition) ease;
+}
